@@ -7,10 +7,10 @@ const H1 = styled.h1`
   background-color: yellow
 `
 const Button = styled.button`
-  background-color: purple;
-  color: white;
+  background-color: var(--color-brand-500);
+  color: var(--color-grey-50);
   border: none;
-  border-radius: 7px;
+  border-radius: var(--border-radius-sm);
   padding: 1.2rem 1.6rem;
   font-size: 1.2rem;
   font-weight: 500;
