@@ -58,6 +58,9 @@ const Button = styled.button`
   font-size: 1.2rem;
   font-weight: 500;
   cursor: pointer;
+  &:hover {
+      background-color: var(--color-brand-700);
+  }
 `
 
 export default Button;
