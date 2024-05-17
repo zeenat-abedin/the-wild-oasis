@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import GlobalStyles from './styles/GlobalStyles'
 import Button from './ui/Button'
+import Input from './ui/Input'
 
 const H1 = styled.h1`
   font-size: 30px;
@@ -8,13 +9,6 @@ const H1 = styled.h1`
   background-color: yellow
 `
 
-const Input = styled.input`
-  border: 1px solid var(--color-grey-300);
-  background-color: var(--color-grey-0);
-  border-radius: 5px;
-  padding: 0.8rem 1.2rem;
-  box-shadow: var(--shadow-sm);
-`
 
 const StyledApp = styled.div`
   background: orangered;
