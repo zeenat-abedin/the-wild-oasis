@@ -16,7 +16,6 @@ const Button = styled.button`
   font-size: 1.2rem;
   font-weight: 500;
   cursor: pointer;
-  margin: 20px;
 `
 
 const Input = styled.input`
@@ -24,6 +23,7 @@ const Input = styled.input`
   background-color: var(--color-grey-0);
   border-radius: 5px;
   padding: 0.8rem 1.2rem;
+  box-shadow: var(--shadow-sm);
 `
 
 const StyledApp = styled.div`
