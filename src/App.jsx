@@ -9,6 +9,7 @@ const H1 = styled.h1`
 const Button = styled.button`
   background-color: var(--color-brand-500);
   color: var(--color-grey-50);
+  box-shadow: var(--shadow-sm);
   border: none;
   border-radius: var(--border-radius-sm);
   padding: 1.2rem 1.6rem;
