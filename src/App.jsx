@@ -24,7 +24,7 @@ function App() {
       <Button onClick={()=>alert('check in')}>Check in</Button>
       <Button onClick={() => alert('check out')}>Check out</Button>
       <Input type='text' placeholder='Number of guests'/>
-      </StyledApp>
+    </StyledApp>
     </>
   )
 }
