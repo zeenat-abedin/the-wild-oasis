@@ -20,7 +20,7 @@ const Button = styled.button`
 `
 
 const Input = styled.input`
-  border: 1px solid #ddd;
+  border: 1px solid var(--color-grey-300);
   border-radius: 5px;
   padding: 0.8rem 1.2rem;
 `
