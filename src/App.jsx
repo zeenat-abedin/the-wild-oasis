@@ -14,10 +14,9 @@ function App() {
   return (
     <>   
     <GlobalStyles/>
-      <StyledApp>
-      <Row>
+    <StyledApp>
+     <Row type="horizontal">
       <Heading as="h1">The Wild Oasis</Heading>
-
       <div>  
       <Heading as="h2">Check in and out</Heading>
       <Button onClick={()=>alert('check in')}>Check in</Button>
@@ -25,13 +24,13 @@ function App() {
       </div>  
      </Row>
         
-      <Row>
-      <Heading as="h3">Form</Heading>
+    <Row type="vertical">
+    <Heading as="h3">Form</Heading>
       <form>
          <Input type='text' placeholder='Number of guests' />
          <Input type='text' placeholder='Number of guests' />
-        </form>
-        </Row>
+      </form>
+    </Row>
     </StyledApp>
     </>
   )
