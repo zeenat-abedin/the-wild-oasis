@@ -16,17 +16,22 @@ function App() {
     <GlobalStyles/>
       <StyledApp>
       <Row>
-      <Heading type="h1">The Wild Oasis</Heading>
+      <Heading as="h1">The Wild Oasis</Heading>
 
       <div>  
-      <Heading type="h2">Check in and out</Heading>
+      <Heading as="h2">Check in and out</Heading>
       <Button onClick={()=>alert('check in')}>Check in</Button>
       <Button onClick={() => alert('check out')}>Check out</Button>
       </div>  
-          
-      <Heading type="h3">Form</Heading>
-      <Input type='text' placeholder='Number of guests' />
-      </Row>
+     </Row>
+        
+      <Row>
+      <Heading as="h3">Form</Heading>
+      <form>
+         <Input type='text' placeholder='Number of guests' />
+         <Input type='text' placeholder='Number of guests' />
+        </form>
+        </Row>
     </StyledApp>
     </>
   )
