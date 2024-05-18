@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components"
 
 const test = css`text-align: center;
-  ${10 > 5 && "background-color:yellow" }
+  ${'' /* ${10 > 5 && "background-color:yellow" } */}
 `
 
 const Heading = styled.h1`

@@ -11,9 +11,10 @@ const StyledApp = styled.main`
 
 function App() {
   return (
-    <>   
-    <GlobalStyles/>
+  <>   
+  <GlobalStyles/>
     <StyledApp>
+     <Row type="vertical">
      <Row type="horizontal">
       <Heading as="h1">The Wild Oasis</Heading>
       <div>  
@@ -30,6 +31,7 @@ function App() {
          <Input type='text' placeholder='Number of guests' />
       </form>
     </Row>
+    </Row>    
     </StyledApp>
     </>
   )
