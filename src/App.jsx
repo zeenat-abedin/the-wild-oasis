@@ -6,6 +6,7 @@ import Cabins from './pages/Cabins'
 import Login from './pages/Login'
 import PageNotFound from './pages/PageNotFound'
 import Settings from './pages/Settings'
+import NewUsers from './pages/Users'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="cabins" element={<Cabins/>} />
         <Route path="login" element={<Login />} />
         <Route path="settings" element={<Settings />} />
+        <Route path="users" element={<NewUsers />} />
         <Route path="*" element={<PageNotFound />} />
         
       </Routes>
