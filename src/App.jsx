@@ -7,9 +7,12 @@ import Login from './pages/Login'
 import PageNotFound from './pages/PageNotFound'
 import Settings from './pages/Settings'
 import NewUsers from './pages/Users'
+import GlobalStyles from './styles/GlobalStyles'
 
 function App() {
   return (
+    <>
+    <GlobalStyles/>
     <BrowserRouter>
       <Routes>
         <Route index element={<Navigate replace to="dashboard"/>}/>
@@ -20,10 +23,10 @@ function App() {
         <Route path="login" element={<Login />} />
         <Route path="settings" element={<Settings />} />
         <Route path="users" element={<NewUsers />} />
-        <Route path="*" element={<PageNotFound />} />
-        
+        <Route path="*" element={<PageNotFound />} />       
       </Routes>
     </BrowserRouter>
+    </>
   )
 }
 
