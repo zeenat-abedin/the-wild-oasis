@@ -1,4 +1,4 @@
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 import Dashboard from './pages/Dashboard'
 import Account from './pages/Account'
 import Bookings from './pages/Bookings'
@@ -12,6 +12,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route index element={<Navigate replace to="dashboard"/>}/>
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="account" element={<Account/>} />
         <Route path="bookings" element={<Bookings/>} />
