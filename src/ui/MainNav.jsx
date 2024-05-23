@@ -49,12 +49,11 @@ const Link = styled.a`
 function MainNav() {
   return (
     <nav>
-      <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
+      <NavList>
+        <li>
+          <Link href="/dashboard">Home</Link>
+        </li>       
+      </NavList>
     </nav>
   )
 }
