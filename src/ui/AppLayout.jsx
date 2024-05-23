@@ -11,7 +11,7 @@ height: 100vh;
 `
 
 const Main = styled.main`
-   background-color: green;
+   background-color: var(--color-brand-200);
    padding: 4rem 4.8rem 6.4rem;
 `
 
