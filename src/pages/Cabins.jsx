@@ -1,11 +1,14 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+
+import { getCabins } from "../services/apiCabins";
 import Heading from "../ui/Heading";
 import Row from "../ui/Row";
 import Button from "../ui/Button";
 import CabinTable from "../features/cabins/CabinTable";
-import { getCabins } from "../services/apiCabins";
+import CreateCabinForm from "../features/cabins/CreateCabinForm";
 
 function Cabins() {
+  const [showForm, setShowForm] = useState(false)
   useEffect(() => {
     getCabins().then((data)=> console.log(data))
   }, [])
@@ -19,7 +22,8 @@ function Cabins() {
     
     <Row>
         <CabinTable /> 
-        <Button>Add new cabin</Button>  
+        <Button onClick={() => setShowForm((show) => !show)}>Add new cabin</Button>  
+        {showForm && <CreateCabinForm/>}
     </Row>
     </>
   );
