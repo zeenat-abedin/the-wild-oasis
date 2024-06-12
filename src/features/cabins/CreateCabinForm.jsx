@@ -91,7 +91,8 @@ function CreateCabinForm() {
       <FormRow>
         <Label htmlFor="regularPrice">Regular price</Label>
         <Input type="number" id="regularPrice" {...register('regularPrice', {
-          required: 'This field is required'
+          required: 'This field is required',
+          validate: (value) => value > 100 || 'Discount should be less than regular price'
         })}/>
       </FormRow>
 
