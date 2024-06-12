@@ -17,7 +17,7 @@ let { data: cabins, error } = await supabase
 export async function createCabins( newCabin ) {
   const { data, error } = await supabase
   .from('cabins')
-  .insert(newCabin)
+  .insert([newCabin])
   .select()
     if (error) {
         console.error(error) 
