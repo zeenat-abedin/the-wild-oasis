@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import styled from "styled-components";
 
 import { createCabin } from "../../services/apiCabins";
@@ -47,11 +47,15 @@ const Label = styled.label`
 // `;
 
 function CreateCabinForm() {
+  const queryClient = useQueryClient()
+
   const { mutate, isLoading } = useMutation({
     mutationFn: createCabin,
     onSuccess: () => {
       toast.success("New cabin successfully created")
-    }
+      queryClient.invalidateQueries({ queryKey: ["cabins"] })
+    },
+    onError: (err) => toast.error(err.message)
   })
   const { register, handleSubmit } = useForm()
 
