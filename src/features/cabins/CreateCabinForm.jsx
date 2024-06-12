@@ -48,7 +48,7 @@ const Label = styled.label`
 
 function CreateCabinForm() {
   const queryClient = useQueryClient()
-  const { register, handleSubmit, reset } = useForm()
+  const { register, handleSubmit, reset, getValues } = useForm()
 
   const { mutate, isLoading: isCreating } = useMutation({
     mutationFn: createCabin,
@@ -92,7 +92,7 @@ function CreateCabinForm() {
         <Label htmlFor="regularPrice">Regular price</Label>
         <Input type="number" id="regularPrice" {...register('regularPrice', {
           required: 'This field is required',
-          validate: (value) => value > 100 || 'Discount should be less than regular price'
+          validate: (value) => value <= getValues().regularPrice || 'Discount should be less than regular price'
         })}/>
       </FormRow>
 
