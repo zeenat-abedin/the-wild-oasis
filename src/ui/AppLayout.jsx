@@ -13,6 +13,7 @@ height: 100vh;
 const Main = styled.main`
    background-color: var(--color-grey-100);
    padding: 4rem 4.8rem 6.4rem;
+   overflow: scroll;
 `
 
 const Container = styled.div`
