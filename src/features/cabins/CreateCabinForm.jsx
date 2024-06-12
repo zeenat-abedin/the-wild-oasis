@@ -9,7 +9,6 @@ import Form from "../../ui/Form";
 import Button from "../../ui/Button";
 import FileInput from "../../ui/FileInput";
 import Textarea from "../../ui/Textarea";
-import Error from "../../ui/Error";
 
 const FormRow = styled.div`
   display: grid;
@@ -80,8 +79,7 @@ function CreateCabinForm() {
         })} />
       </FormRow>
 
-      <FormRow>
-        <Label htmlFor="maxCapacity">Maximum capacity</Label>
+      <FormRow label="Maximum capacity" error={errors?.maxCapacity?.message}>
         <Input type="number" id="maxCapacity" {...register('maxCapacity', {
           required: 'This field is required',
           min: {
@@ -91,30 +89,26 @@ function CreateCabinForm() {
         })}/>
       </FormRow>
 
-      <FormRow>
-        <Label htmlFor="regularPrice">Regular price</Label>
+      <FormRow label="Regular price" error={errors?.regularPrice?.message}>
         <Input type="number" id="regularPrice" {...register('regularPrice', {
           required: 'This field is required',
           validate: (value) => value <= getValues().regularPrice || 'Discount should be less than regular price'
         })}/>
       </FormRow>
 
-      <FormRow>
-        <Label htmlFor="discount">Discount</Label>
+      <FormRow label="Discount" error={errors?.discount?.message}>
         <Input type="number" id="discount" defaultValue={0} {...register('discount', {
           required: 'This field is required'
         })}/>
       </FormRow>
 
-      <FormRow>
-        <Label htmlFor="description">Description for website</Label>
+      <FormRow label="Description for website" error={errors?.description?.message}>
         <Textarea type="number" id="description" defaultValue="" {...register('description', {
           required: 'This field is required'
         })}/>
       </FormRow>
 
-      <FormRow>
-        <Label htmlFor="image">Cabin photo</Label>
+      <FormRow label="Cabin photo" error={errors?.image?.message}>
         <FileInput id="image" accept="image/*" />
       </FormRow>
 
