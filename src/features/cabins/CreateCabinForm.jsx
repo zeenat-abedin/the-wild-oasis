@@ -1,11 +1,14 @@
+import { useForm } from "react-hook-form";
+import { useMutation } from "@tanstack/react-query";
 import styled from "styled-components";
 
+import { createCabin } from "../../services/apiCabins";
 import Input from "../../ui/Input";
 import Form from "../../ui/Form";
 import Button from "../../ui/Button";
 import FileInput from "../../ui/FileInput";
 import Textarea from "../../ui/Textarea";
-import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 
 const FormRow = styled.div`
   display: grid;
@@ -44,6 +47,12 @@ const Label = styled.label`
 // `;
 
 function CreateCabinForm() {
+  const { mutate, isLoading } = useMutation({
+    mutationFn: createCabin,
+    onSuccess: () => {
+      toast.success("New cabin successfully created")
+    }
+  })
   const { register, handleSubmit } = useForm()
 
   function onSubmit(data) {
