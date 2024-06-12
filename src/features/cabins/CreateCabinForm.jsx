@@ -9,6 +9,7 @@ import Form from "../../ui/Form";
 import Button from "../../ui/Button";
 import FileInput from "../../ui/FileInput";
 import Textarea from "../../ui/Textarea";
+import Error from "../../ui/Error";
 
 const FormRow = styled.div`
   display: grid;
@@ -48,7 +49,10 @@ const Label = styled.label`
 
 function CreateCabinForm() {
   const queryClient = useQueryClient()
-  const { register, handleSubmit, reset, getValues } = useForm()
+  const { register, handleSubmit, reset, getValues, formState } = useForm()
+
+  const { errors } = formState()
+  console.log(errors)
 
   const { mutate, isLoading: isCreating } = useMutation({
     mutationFn: createCabin,
@@ -75,6 +79,7 @@ function CreateCabinForm() {
         <Input type="text" id="name" {...register('name', {
           required: 'This field is required'
         })} />
+        {errors?.name?.message && <Error>{ errors.name.message}</Error>}
       </FormRow>
 
       <FormRow>
