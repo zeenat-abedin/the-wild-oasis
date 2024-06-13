@@ -37,9 +37,9 @@ const FormRow = styled.div`
   }
 `;
 
-const Label = styled.label`
-  font-weight: 500;
-`;
+// const Label = styled.label`
+//   font-weight: 500;
+// `;
 
 // const Error = styled.span`
 //   font-size: 1.4rem;
