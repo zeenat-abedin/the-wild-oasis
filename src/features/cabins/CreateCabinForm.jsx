@@ -94,26 +94,26 @@ function CreateCabinForm() {
       </FormRow>
 
       <FormRow label="Regular price" error={errors?.regularPrice?.message}>
-        <Input type="number" id="regularPrice" {...register('regularPrice', {
+        <Input type="number" id="regularPrice" disabled={isCreating} {...register('regularPrice', {
           required: 'This field is required',
           validate: (value) => value <= getValues().regularPrice || 'Discount should be less than regular price'
         })}/>
       </FormRow>
 
       <FormRow label="Discount" error={errors?.discount?.message}>
-        <Input type="number" id="discount" defaultValue={0} {...register('discount', {
+        <Input type="number" id="discount" disabled={isCreating} defaultValue={0} {...register('discount', {
           required: 'This field is required'
         })}/>
       </FormRow>
 
       <FormRow label="Description for website" error={errors?.description?.message}>
-        <Textarea type="number" id="description" defaultValue="" {...register('description', {
+        <Textarea type="number" id="description" disabled={isCreating} defaultValue="" {...register('description', {
           required: 'This field is required'
         })}/>
       </FormRow>
 
       <FormRow label="Cabin photo" error={errors?.image?.message}>
-        <FileInput id="image" accept="image/*" />
+        <FileInput id="image" disabled={isCreating} accept="image/*" />
       </FormRow>
 
       <FormRow>
