@@ -14,14 +14,18 @@ let { data: cabins, error } = await supabase
     return cabins;
 }
 
-export async function createCabin( newCabin ) {
+export async function createCabin(newCabin) {
+  //1. Create cabin
   const { data, error } = await supabase
   .from('cabins').insert([newCabin])
   
-    if (error) {
-        console.error(error) 
-        throw new Error('Cabin could not be created')
-    }
+  if (error) {
+    console.error(error) 
+    throw new Error('Cabin could not be created')
+  }
+
+  //2. Upload image
+
   return data      
 }
 
