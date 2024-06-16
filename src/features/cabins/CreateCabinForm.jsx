@@ -90,7 +90,7 @@ function CreateCabinForm({ cabinToEdit = {} }) {
           accept="image/*"
           type="file"
           {...register('image', {
-          required: 'This field is required'
+          required: isEditSession ? false : 'This field is required'
         })}/>
       </FormRow>
 
