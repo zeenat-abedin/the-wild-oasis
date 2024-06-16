@@ -52,4 +52,5 @@ FormRow.propTypes = {
     error: PropTypes.string.isRequired,
     children: PropTypes.string.isRequired,
 };
+
 export default FormRow

@@ -1,6 +1,7 @@
 import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import PropTypes from 'prop-types'; 
 
 import { createCabin } from "../../services/apiCabins";
 import Input from "../../ui/Input";
@@ -11,9 +12,14 @@ import Textarea from "../../ui/Textarea";
 import FormRow from "../../ui/FormRow";
 
 
-function CreateCabinForm() {
+function CreateCabinForm({ cabinToEdit = {} }) {
+  const { id: editId, ...editValues } = cabinToEdit
+  const isEditSession = Boolean(editId)
+
   const queryClient = useQueryClient()
-  const { register, handleSubmit, reset, getValues, formState } = useForm()
+  const { register, handleSubmit, reset, getValues, formState } = useForm({
+    defaultValues: isEditSession ? editValues : {},
+  })
 
   const { errors } = formState
   console.log(errors)
@@ -97,5 +103,10 @@ function CreateCabinForm() {
     </Form>
   );
 }
+
+CreateCabinForm.propTypes = {
+    editId: PropTypes.string.isRequired,
+    cabinToEdit: PropTypes.object.isRequired,
+};
 
 export default CreateCabinForm;
