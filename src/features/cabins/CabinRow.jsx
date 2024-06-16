@@ -5,6 +5,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { deleteCabins } from '../../services/apiCabins';
 import toast from 'react-hot-toast';
 import { useState } from 'react';
+import CreateCabinForm from './CreateCabinForm';
 
 const TableRow = styled.div`
   display: grid;
@@ -64,6 +65,7 @@ function CabinRow({ cabin }) {
   })
 
   return (
+    <>
     <TableRow role="row">
       <Img src={image} />
       <Cabin>{name}</Cabin>
@@ -73,6 +75,8 @@ function CabinRow({ cabin }) {
       <button onClick={() => setShowForm((show) => !show)}>Edit</button>
       <button onClick={() => mutate(cabinId)} disabled={isDeleting}>Delete</button>
     </TableRow>
+      {showForm && <CreateCabinForm />}
+    </>
   )
 }
 
