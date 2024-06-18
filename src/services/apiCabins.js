@@ -19,8 +19,6 @@ export async function createEditCabin(newCabin, id) {
   
   const imagePath = `${supabaseUrl}/storage/v1/object/public/cabin-images/${imageName}`
 
- //https://gmdbcmlihuxelbjjczws.supabase.co/storage/v1/object/public/cabin-images/cabin-001.jpg
-
   //1. Create cabin
   let query = supabase.from('cabins')
 
