@@ -2,9 +2,7 @@ import supabase, { supabaseUrl } from "./supabase";
 
 export async function getCabins() {
     
-let { data: cabins, error } = await supabase
-  .from('cabins')
-        .select('*')
+let { data: cabins, error } = await supabase.from('cabins').select('*')
     
     if (error) {
         console.error(error) 
@@ -15,7 +13,7 @@ let { data: cabins, error } = await supabase
 }
 
 export async function createEditCabin(newCabin, id) {
-  const hasImagePath = newCabin.image?.startsWith?.(supabase)
+  const hasImagePath = newCabin.image?.startsWith?.(supabaseUrl)
 
   const imageName = `${Math.random()}-${newCabin.image.name}`.replaceAll('/', '')
   
@@ -48,7 +46,7 @@ export async function createEditCabin(newCabin, id) {
   if (storageError) {
     await supabase.from('cabins').delete().eq('id', data.id)
     console.error(storageError) 
-    throw new Error('Cabin image could not be uploaded and the abin was not created')
+    throw new Error('Cabin image could not be uploaded and the cabin was not created')
   }
 
   return data      
