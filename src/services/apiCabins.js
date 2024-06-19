@@ -25,7 +25,7 @@ export async function createEditCabin(newCabin, id) {
   let query = supabase.from('cabins')
 
   //A) CREATE CABIN
-  if (!id) query.insert([{ ...newCabin, image: imagePath }])
+  if (!id) query = query.insert([{ ...newCabin, image: imagePath }])
   
   //B) EDIT CABIN 
   if(id) query.update({ other_column: 'otherValue' })
