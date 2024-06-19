@@ -19,10 +19,10 @@ export async function createEditCabin(newCabin, id) {
   
   const imagePath = `${supabaseUrl}/storage/v1/object/public/cabin-images/${imageName}`
 
-  //1. Create cabin
+  //1. Create/edit cabin
   let query = supabase.from('cabins')
 
-  query.insert([{ ...newCabin, image: imagePath }])
+  if (!id) query.insert([{ ...newCabin, image: imagePath }])
   
   const { data, error } = await query.select().single()
   
