@@ -15,9 +15,10 @@ let { data: cabins, error } = await supabase
 }
 
 export async function createEditCabin(newCabin, id) {
+  const hasImagePath = newCabin.image.startsWith(supabase)
   const imageName = `${Math.random()}-${newCabin.image.name}`.replaceAll('/', '')
   
-  const imagePath = `${supabaseUrl}/storage/v1/object/public/cabin-images/${imageName}`
+  const imagePath = hasImagePath ? newCabin.image : `${supabaseUrl}/storage/v1/object/public/cabin-images/${imageName}`
 
   //1. Create/edit cabin
   let query = supabase.from('cabins')
