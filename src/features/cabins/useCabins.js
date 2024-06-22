@@ -6,6 +6,7 @@ export function useCabins() {
         queryKey: ["cabins"],
         queryFn: getCabins
    })
+  // check
 
    return {
      isLoading, error, cabins 
